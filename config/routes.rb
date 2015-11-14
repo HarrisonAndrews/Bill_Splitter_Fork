@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  post 'bills', :to => "bills#create"
+  get 'bills/:id', :to => "bills#show"
+  put 'bills/:id', :to => "bills#update"
+  patch 'bills/:id', :to => "bills#update"
+  delete 'bills/:id', :to => "bills#delete"
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
