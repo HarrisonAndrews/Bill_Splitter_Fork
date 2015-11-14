@@ -7,7 +7,7 @@ require 'rack/cors'
 use Rack::Cors do
   allow do
     origins '*'
-    resource '*'
+    resource '*',
       :header => :any,
       :expose => ['Auth-Token', 'expiry', 'token-type', 'uid', 'client'],
       :methods => [:get, :post, :delete, :put, :patch, :options]
