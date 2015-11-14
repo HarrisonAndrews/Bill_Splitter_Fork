@@ -10,10 +10,4 @@ Rails.application.routes.draw do
   patch 'bills/:id', :to => "bills#update"
   delete 'bills/:id', :to => "bills#delete"
 
-
-
-
-
-
-
 end
