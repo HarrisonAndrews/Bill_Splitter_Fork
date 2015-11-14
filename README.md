@@ -6,16 +6,16 @@
 
 ###### JSON:
 
-` {
- "user": {
-   "user_id": 2,
-   "email": "rc1234@me.com",
-   "first_name": "Robby",
-   "last_name": "Cramer",
-   "address": "400 Atlanta Drive",
-   "auth_token": "f33add59aefa8d41982c6cff1162a8b2"
- }
-} `
+` { `
+ `"user": {`
+  ` "user_id": 2,`
+  ` "email": "rc1234@me.com",`
+   `"first_name": "Robby",`
+  ` "last_name": "Cramer",`
+  ` "address": "400 Atlanta Drive",`
+  ` "auth_token": "f33add59aefa8d41982c6cff1162a8b2"`
+ `}`
+`} `
 
 
 ### POST `"/login"`
