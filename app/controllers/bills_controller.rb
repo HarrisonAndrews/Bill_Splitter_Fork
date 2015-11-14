@@ -2,23 +2,22 @@ class BillsController < ApplicationController
 
   def create
     @bill = current_user.bills.create(bill_params)
-
     render :show
   end
 
   def show
-    @bill = Bill.find_by_id
+    @bill = Bill.find(params[:id])
     render :show
   end
 
   def update
-    @bill = Bill.find_by_id
+    @bill = Bill.find(params[:id])
     @bill.update(bill_params)
     render :show
   end
 
   def delete
-    @bill = Bill.find_by_id
+    @bill = Bill.find(params[:id])
     @bill.destroy
     render :delete
   end
@@ -27,8 +26,10 @@ class BillsController < ApplicationController
   def bill_params
     allow = [
         :amount,
-        :due_date
-    ]
+        :due_date,
+        :user_id,
+        :title
+       ]
     params.permit(allow)
   end
 
