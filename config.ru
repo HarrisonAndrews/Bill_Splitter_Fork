@@ -10,6 +10,6 @@ use Rack::Cors do
     resource '*',
       :header => :any,
       :expose => ['Auth-Token', 'expiry', 'token-type', 'uid', 'client'],
-      :methods => [:get, :post, :delete, :put, :patch, :options]
+      :methods => [:get, :post, :delete, :put, :patch, :options, :head]
   end
 end
