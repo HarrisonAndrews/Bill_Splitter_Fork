@@ -1,7 +1,7 @@
 class BillsController < ApplicationController
 
   def create
-    @bill = Bills.create(bill_params)
+    @bill = current_user.bills.create(bill_params)
 
     render :show
   end
