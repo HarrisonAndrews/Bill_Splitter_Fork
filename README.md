@@ -1,10 +1,10 @@
 
 
 
-## POST `"/signup"`
-### Params: `first_name:` a user's first name. `last_name:` a user's last name. `email:` a user's email address. `password:` a user has a password. `address:` a user has an address.
+### POST `"/signup"`
+##### Params: `first_name:` a user's first name. `last_name:` a user's last name. `email:` a user's email address. `password:` a user has a password. `address:` a user has an address.
 
-#### JSON:
+###### JSON:
 
 ` {
  "user": {
@@ -18,10 +18,10 @@
 } `
 
 
-## POST `"/login"`
-### Params: `email:` a user's email. `password:` a user's password.
+### POST `"/login"`
+##### Params: `email:` a user's email. `password:` a user's password.
 
-#### JSON:
+###### JSON:
 
 ` {
  "user": {
