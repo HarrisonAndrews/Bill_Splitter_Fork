@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  before_validation :ensure_access_token!
+  before_validation :ensure_auth_token!
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_uniqueness_of :email
   validates_format_of :email, with: /.+@.+\..+/
-  validates :access_token, presence: true, uniqueness: true
+  validates :auth_token, presence: true, uniqueness: true
 
 
 
@@ -17,15 +17,15 @@ class User < ActiveRecord::Base
 
 
 
-  def ensure_access_token!
-    if self.access_token.blank?
-      self.access_token = User.generate_token
+  def ensure_auth_token!
+    if self.auth_token.blank?
+      self.auth_token = User.generate_token
     end
   end
 
   def self.generate_token
     token = SecureRandom.hex
-    while User.exists?(access_token: token)
+    while User.exists?(auth_token: token)
       token = SecureRandom.hex
     end
     token
