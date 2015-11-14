@@ -13,7 +13,7 @@ class BillsController < ApplicationController
 
   def update
     @bill = Bill.find_by_id
-    @bill.update()
+    @bill.update(bill_params)
     render :show
   end
 

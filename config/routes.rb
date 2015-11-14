@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
-  post "/signup", to: "registrations#create"
-  delete "/signup", to: "registrations#delete"
-  post "/login", to: "registrations#login"
+  root to: 'home#index'
+  post "signup", to: "registrations#create"
+  delete "signup", to: "registrations#delete"
+  post "login", to: "registrations#login"
 
   post 'bills', :to => "bills#create"
   get 'bills/:id', :to => "bills#show"
