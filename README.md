@@ -31,3 +31,19 @@
  }
 } 
 ```
+
+### POST `"/bill"`
+##### Params: `user_id:` a user's id. `title:` title of bill. `amount:` total amount of bill. `due_date:` in the format of YYYY-MM-DD.
+
+###### JSON:
+```json
+{
+  "bill": {
+    "user_id": 3,
+    "title": "electric",
+    "amount": 100,
+    "due_date": "2015-12-20",
+    "id": 6
+  }
+}
+```
