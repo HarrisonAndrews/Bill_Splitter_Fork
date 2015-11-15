@@ -1,10 +1,14 @@
 class PortionsController < ApplicationController
   def create
+    @bill_amount = Bill.find(params[:bill_id]).amount
+    binding.pry
+    percentage = params[:amount].to_f / @bill_amount
     @portion = Portion.new(bill_id: params[:bill_id],
                      roommate_id: params[:roommate_id],
                      amount: params[:amount],
-                     percentage: params[:percentage],
-                      due_date: params[:due_date])
+                      due_date: params[:due_date],
+                      percentage: percentage)
+
     if @portion.save
       render "create.json.jbuilder", status: :created
     else
@@ -30,9 +34,9 @@ class PortionsController < ApplicationController
       @portion.update(bill_id: params[:bill_id],
                    roommate_id: params[:roommate_id],
                    amount: params[:amount],
-                   percentage: @bill_amount / params[:amount],
+                   percentage: (@bill_amount / params[:amount]).to_i,
                     due_date: params[:due_date])
-      render json: {success: "Portion: #{@portion.bill_id}"}, status: :accepted
+      render "show.json.jbuilder", status: :accepted
     else
       render json: { error: "Unable to edit the portion." },
              status: :unauthorized

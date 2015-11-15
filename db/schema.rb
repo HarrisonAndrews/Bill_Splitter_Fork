@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115003047) do
+ActiveRecord::Schema.define(version: 20151115152723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20151115003047) do
     t.integer  "bill_id"
     t.integer  "roommate_id"
     t.integer  "amount"
-    t.integer  "percentage"
     t.date     "due_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "percentage"
   end
 
   create_table "roommates", force: :cascade do |t|

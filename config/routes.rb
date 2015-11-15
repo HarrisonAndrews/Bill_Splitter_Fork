@@ -12,8 +12,14 @@ Rails.application.routes.draw do
 
   post "/roommates", to: "roommates#create"
   get "/bill", to: "roommates#index"
-  get "/roommates/:id", to: "bills#show"
-  delete "/roommates/:id", to: "bills#destroy"
-  put "/roommates/:id", to: "bills#update"
+  get "/roommates/:id", to: "roommates#show"
+  delete "/roommates/:id", to: "roommates#destroy"
+  put "/roommates/:id", to: "roommates#update"
+
+  post "/portions", to: "portions#create"
+  get "/portions", to: "portions#index"
+  get "/portions/:id", to: "portions#show"
+  delete "/portions/:id", to: "portions#destroy"
+  put "/portions/:id", to: "portions#update"
 
 end
