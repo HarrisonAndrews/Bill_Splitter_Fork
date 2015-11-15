@@ -42,8 +42,8 @@ class PortionsController < ApplicationController
   def delete
     @portion = Portion.find(params[:id])
     if current_user.id == @portion.user_id
-      @bill.destroy
-      render json: {success: "Bill delete successful."}, status: :accepted
+      @portion.destroy
+      render json: {success: "Portion deleted successfully."}, status: :accepted
     else
       render json: { error: "Unable to delete the bill." },
              status: :unauthorized
