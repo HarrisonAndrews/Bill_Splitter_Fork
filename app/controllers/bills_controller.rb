@@ -15,7 +15,7 @@ class BillsController < ApplicationController
   end
 
   def index
-    @bills = Bill.current_user.all
+    @bills = Bill.all
     render "index.json.jbuilder", status: :accepted
   end
 
