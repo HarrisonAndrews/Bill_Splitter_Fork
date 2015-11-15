@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/login", to: "registrations#login"
 
   post "/bill", to: "bills#create"
-  get "/bill/:user_id", to: "bills#index"
+  get "/bill", to: "bills#index"
   get "/bill/:id", to: "bills#show"
   delete "/bill/:id", to: "bills#destroy"
   put "/bill/:id", to: "bills#update"
