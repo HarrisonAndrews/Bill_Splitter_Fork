@@ -39,7 +39,7 @@ class BillsController < ApplicationController
   end
 
   def destroy
-    @bill = Bill.find_by(:id)
+    @bill = Bill.find(params[:id])
     if current_user.id == @bill.user_id
       @bill.destroy
       render json: {success: "Bill delete successful."}, status: :accepted
