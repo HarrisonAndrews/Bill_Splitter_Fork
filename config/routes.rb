@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   put "/bill/:id", to: "bills#update"
 
   post "/roommates", to: "roommates#create"
-  get "/bill", to: "roommates#index"
+  get "/roommates", to: "roommates#index"
   get "/roommates/:id", to: "roommates#show"
   delete "/roommates/:id", to: "roommates#destroy"
   put "/roommates/:id", to: "roommates#update"
