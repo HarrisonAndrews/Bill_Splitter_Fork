@@ -26,7 +26,7 @@ class BillsController < ApplicationController
 
   def update
     @bill = Bill.find(params[:id])
-    if current_user.id == @bill.user_id
+    if current_user.user_id == @bill.user_id
       @bill.update(title: params[:title],
                     amount: params[:amount],
                     due_date: params[:due_date],

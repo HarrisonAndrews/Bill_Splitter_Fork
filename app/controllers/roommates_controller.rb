@@ -24,7 +24,7 @@ class RoommatesController < ApplicationController
 
   def update
     @roommate = Roommate.find(params[:id])
-    if @roommate && current_user.id == @roommate.user_id
+    if current_user.id == @roommate.user_id
       @roommate.update(name: params[:name],
                       email: params[:email],
                        phone: params[:phone],
@@ -38,7 +38,7 @@ class RoommatesController < ApplicationController
 
   def delete
     @roommate = Roommate.find(params[:id])
-    if @roommate && current_user.id == @roommate.user_id
+    if current_user.id == @roommate.user_id
       @roommate.destroy
       render json: {success: "Roommate deleted successfully."}, status: :accepted
     else
