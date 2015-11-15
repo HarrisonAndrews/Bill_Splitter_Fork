@@ -1,4 +1,4 @@
-json.roommates @roommates do |roommate|
+json.roommate @roommates do |roommate|
   json.name roommate.name
   json.email roommate.email
   json.phone roommate.phone
