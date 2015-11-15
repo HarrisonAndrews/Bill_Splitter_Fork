@@ -1,7 +1,6 @@
 class PortionsController < ApplicationController
   def create
     @bill_amount = Bill.find(params[:bill_id]).amount
-    binding.pry
     percentage = params[:amount].to_f / @bill_amount
     @portion = Portion.new(bill_id: params[:bill_id],
                      roommate_id: params[:roommate_id],
