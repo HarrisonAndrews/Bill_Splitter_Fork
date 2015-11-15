@@ -1,4 +1,4 @@
-json.bills @bills do |bill|
+json.bill @bills do |bill|
   json.title bill.title
   json.bill_id bill.id
   json.due_date bill.due_date
