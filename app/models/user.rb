@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :roommates
   has_many :bills
-
+  has_many :portions, through: :bills
 
 
   def ensure_auth_token!

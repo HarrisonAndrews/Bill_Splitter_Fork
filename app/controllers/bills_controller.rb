@@ -26,21 +26,21 @@ class BillsController < ApplicationController
 
   def update
     @bill = Bill.find(params[:id])
-    if @bill && current_user.id == @bill.user_id
+    if current_user.id == @bill.user_id
       @bill.update(title: params[:title],
                     amount: params[:amount],
                     due_date: params[:due_date],
                     user_id: params[:user_id])
-      render json: {success: "Title: #{@bill.title}"}, status: :accepted
+      render "show.json.jbuilder", status: :accepted
     else
       render json: { error: "Unable to edit the bill." },
              status: :unauthorized
     end
   end
 
-  def delete
+  def destroy
     @bill = Bill.find(params[:id])
-    if @bill && current_user.id == @bill.user_id
+    if current_user.id == @bill.user_id
       @bill.destroy
       render json: {success: "Bill delete successful."}, status: :accepted
     else
