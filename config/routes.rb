@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   delete "/bill/:id", to: "bills#destroy"
   put "/bill/:id", to: "bills#update"
 
+  post "/roommates", to: "roommates#create"
+  get "/bill", to: "roommates#index"
+  get "/roommates/:id", to: "bills#show"
+  delete "/roommates/:id", to: "bills#destroy"
+  put "/roommates/:id", to: "bills#update"
+
 end
