@@ -1,4 +1,5 @@
 class PortionsController < ApplicationController
+
   def create
     @bill_amount = Bill.find(params[:bill_id]).amount
     percentage = params[:amount].to_f / @bill_amount
@@ -17,7 +18,9 @@ class PortionsController < ApplicationController
   end
 
   def index
-    @portions = Portion.all
+    # /users/:user_id/portions
+    # /portions
+    @portions = current_user.portions
     render "index.json.jbuilder", status: :accepted
   end
 
