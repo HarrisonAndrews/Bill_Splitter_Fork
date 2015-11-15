@@ -3,5 +3,5 @@ json.portion @portions do |portion|
   json.roommate_id portion.roommate_id
   json.amount portion.amount
   json.due_date portion.due_date
-  json.user_id portion.user_id
+  json.percentage portion.percentage
 end
