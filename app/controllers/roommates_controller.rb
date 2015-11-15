@@ -29,7 +29,7 @@ class RoommatesController < ApplicationController
                       email: params[:email],
                        phone: params[:phone],
                    user_id: params[:user_id])
-      render json: {success: "Roommate: #{@roommate.name}"}, status: :accepted
+      render "show.json.jbuilder", status: :accepted
     else
       render json: { error: "Unable to edit the roommate." },
              status: :unauthorized
