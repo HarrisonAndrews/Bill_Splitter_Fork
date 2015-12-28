@@ -1,11 +1,22 @@
+##### Bill Splitter App
+An app created to solve the problem of having multiple roommates and paying bills on time.
+The app is created from the viewpoint of the head of the household.
+The head of the household can create an account and add an address of the house.
+The head of the household can then create tenants in the house.
+The head of the household can then create bills for the house.
+He/She can then divi up the bill and decide what portion to assign to each roommate.
+The app then tracks which roommates have paid and which have not.
+Allows you to assign due dates to each bill and send reminders.
 
-### REGISTRATION ROUTES
 
-#### To Create a User
-#### POST `"/signup"`
-###### Params: `first_name:` a user's first name. `last_name:` a user's last name. `email:` a user's email address. `password:` a user has a password. `address:` a user has an address.
 
-####### JSON:
+#### REGISTRATION ROUTES
+
+To Create a User
+##### POST `"/signup"`
+Params: `first_name:` a user's first name. `last_name:` a user's last name. `email:` a user's email address. `password:` a user has a password. `address:` a user has an address.
+
+###### JSON:
 ```json
  { 
  "user": {
